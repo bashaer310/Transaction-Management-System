@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('transaction_id')->nullable(); 
             $table->string('note');
             $table->enum('type', ['outgoing', 'incoming'])->default('outgoing');
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
+            $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
         });
     }
