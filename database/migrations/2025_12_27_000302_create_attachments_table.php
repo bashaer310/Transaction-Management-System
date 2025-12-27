@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('transaction_id')->nullable();
             $table->string('file_path');
-            $table->enum('type', ['outgoing', 'ingoing'])->default('pending');
+            $table->enum('type', ['outgoing', 'incoming'])->default('outgoing');
             $table->unsignedBigInteger('uploaded_by');
             $table->timestamps();
             $table->foreign('transaction_id')->references('id')->on('transactions')->onDelete('cascade');
