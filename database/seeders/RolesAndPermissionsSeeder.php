@@ -22,7 +22,7 @@ class RolesAndPermissionsSeeder extends Seeder
         /* Create Rols */
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         $manager = Role::firstOrCreate(['name' => 'Manager']);
-        $user = Role::firstOrCreate(['name' => 'User']);
+        $employee = Role::firstOrCreate(['name' => 'employee']);
 
         /* Create Permissions */
         $permissions = [
@@ -85,7 +85,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'view-entity',
         ]);
 
-        $user->givePermissionTo([
+        $employee->givePermissionTo([
             'view-transaction',
             'create-note',
             'view-note',
