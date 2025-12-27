@@ -22,7 +22,7 @@ class RolesAndPermissionsSeeder extends Seeder
         /* Create Rols */
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         $manager = Role::firstOrCreate(['name' => 'Manager']);
-        $employee = Role::firstOrCreate(['name' => 'employee']);
+        $employee = Role::firstOrCreate(['name' => 'Employee']);
 
         /* Create Permissions */
         $permissions = [
