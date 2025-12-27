@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->string('note');
-            $table->enum('type', ['outgoing', 'ingoing'])->default('pending');
+            $table->enum('type', ['outgoing', 'incoming'])->default('outgoing');
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
