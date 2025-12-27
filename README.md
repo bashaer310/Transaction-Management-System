@@ -24,4 +24,33 @@ This is a full-stack solution for an internal transaction management system, bui
   - **Department Listing** - admin can retrieve departments with pagination and filtering
 
 - **Reporting**:
-  - **Reporting printing** - admin can generate and print transaction reports with filtering options 
+  - **Reporting printing** - admin can generate and print transaction reports with filtering options
+ 
+## Technologies Used
+
+- Languages
+    - PHP – Server-side programming language
+    - HTML - Page structure and markup
+    - CSS - Styling and layout
+    - JavaScript - Client-side interactivity
+
+- Frameworks
+    - Laravel – Web application framework
+    - Bootstrap – CSS framework
+
+- Database
+    - MySQL – Relational database 
+
+- Packages
+    - Laravel Eloquent ORM – Database interaction and ORM
+    - Filament – Admin dashboard and panel management
+    - Spatie Laravel Permission – Role and permission management
+    - DOMPDF / Laravel Snappy – PDF generation for reports
+    - Laravel Authentication (Fortify) – User authentication and authorization
+
+- Package manger
+      - Composer – Dependency and package manager for PHP
+  
+- Tools
+    - XAMPP – Local development environment 
+    - Laravel Artisan – Command-line tool for Laravel 
