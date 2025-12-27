@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         /* retrieve roles */
         $adminRole   = Role::where('name', 'Admin')->firstOrFail();
         $managerRole = Role::where('name', 'Manager')->firstOrFail();
-        $userRole    = Role::where('name', 'User')->firstOrFail();
+        $employeeRole    = Role::where('name', 'Employee')->firstOrFail();
 
         /* Create admin  */
         $admin = User::firstOrCreate(
