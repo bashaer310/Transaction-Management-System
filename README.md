@@ -5,15 +5,15 @@ This is a full-stack solution for an internal transaction management system, bui
 ## Features
 
 - **User Management**:
-  - **User Registration** - admin can create accounts for users (employee)
+  - **User Registration** - admin can create user accounts (employee)
   - **Authentication & Authorization** - users can login with role-based access
-  - **Profile Management** - users can update their profile
+  - **Profile Management** - users can view and update their profile
  
 - **Transaction Management**:
-  - **Transaction Management** - admin can create a transaction and linked with an entity and forward to a department, and update or delete it
-  - **Transaction Browsing** - users can retrieve transactions that forwarded to their department with pagination and filtering
+  - **Transaction Management** - admin can create transactions, link them to entities, forward them to departments, and update or delete them
+  - **Transaction Browsing** - users can retrieve transactions forwarded to their department with pagination and filtering
   - **Transaction Details** - users can view transaction details
-  - **Transaction Status Management** - users can automate the transaction that forwarded to their department (completed), and admin can approve their work (approved)
+  - **Transaction Status Management** - departments can complete transactions (completed), and admins can review and approve them (approved)
 
 - **Entity Management**:
   - **Entity Management** - admin can create, update, and delete entities
@@ -24,4 +24,4 @@ This is a full-stack solution for an internal transaction management system, bui
   - **Department Listing** - admin can retrieve departments with pagination and filtering
 
 - **Reporting**:
-  - **Reporting printing** - admin can print a Report for all transactions with filtering 
+  - **Reporting printing** - admin can generate and print transaction reports with filtering options 
