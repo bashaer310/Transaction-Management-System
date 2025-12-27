@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.  
      */
     public function up(): void
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('transaction_id')->nullable(); 
+            $table->unsignedBigInteger('transaction_id'); 
             $table->string('note');
             $table->enum('type', ['outgoing', 'incoming'])->default('outgoing');
             $table->unsignedBigInteger('created_by');
