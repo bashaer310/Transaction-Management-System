@@ -49,7 +49,7 @@ This is a full-stack solution for an internal transaction management system, bui
     - Laravel Authentication (Fortify) – User authentication and authorization
 
 - Package manger
-      - Composer – Dependency and package manager for PHP
+    - Composer – Dependency and package manager for PHP
   
 - Tools
     - XAMPP – Local development environment 
