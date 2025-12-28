@@ -69,10 +69,10 @@ This is a web application for an internal transaction management system, built w
   ```
 
 3. Install dependencies:
-  Make sure Composer is installed, then run:
-  ```bash
-  composer install
-  ```
+     - Make sure Composer is installed, then run:
+     ```bash
+     composer install
+     ```
 4. Configure Environment
     - Copy the environment file:
        ```bash
