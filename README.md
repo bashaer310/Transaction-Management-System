@@ -13,7 +13,7 @@ This is a web application for an internal transaction management system, built w
   - **Transaction Management** - admin  or manger can create transactions, link them to entities, forward them to departments, and update or delete them
   - **Transaction Browsing** - users can retrieve transactions forwarded to their department with pagination and filtering
   - **Transaction Details** - users can view transaction details
-  - **Note and attachment creation** - users can write notes and upload attachments forwarded to their departments
+  - **Note and attachment creation** - users can write notes and upload attachments to transactions forwarded to their departments
   - **Transaction Status Management** - departments can complete transactions (completed), and admin or manager can review and approve them (approved)
 
 - **Entity Management**:
@@ -54,4 +54,69 @@ This is a web application for an internal transaction management system, built w
   
 - Tools
     - XAMPP – Local development environment 
-    - Laravel Artisan – Command-line tool for Laravel 
+    - Laravel Artisan – Command-line tool for Laravel
+ 
+## Getting Started
+
+1. Clone the repository:
+  ```bash
+  git clone https://github.com/bashaer310/Transaction-Management-System
+  ```
+
+2. Navigate to the project folder:
+  ```bash
+  cd Transaction-Management-System
+  ```
+
+3. Install dependencies:
+Make sure Composer is installed, then run:
+  ```bash
+  composer install
+  ```
+4. Configure Environment
+    - Copy the environment file:
+       ```bash
+       composer install
+       ```
+    - Open the .env file and update the database configuration:
+       ```bash
+       DB_CONNECTION=mysql
+       DB_HOST=127.0.0.1
+       DB_PORT=3306
+       DB_DATABASE=db_name
+       DB_USERNAME=your_username
+       DB_PASSWORD=your_password
+       ```
+       Ensure your database server (MySQL) is running and the database exists.
+5. Generate application key
+    ```bash
+       php artisan key:generate
+    ```
+6. Run migrations
+    ```bash
+       php artisan migrate --seed
+    ```
+7. Run the application
+   ```bash
+       php artisan serve
+   ```
+8. Test the application
+   - The application will be available at: http://localhost:8000
+   - Admin panel URL: http://localhost:8000/admin
+
+## Project structure
+
+## Deployment
+
+The application is deployed and can be accessed at:
+
+## Team Members
+
+- [Bashaer Alhuthali](https://github.com/bashaer310)
+- Bashayer Bajaber
+- Sarah Numan
+- Esraa Alshareef
+
+## License
+
+This project is licensed under the MIT License.
