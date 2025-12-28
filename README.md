@@ -30,31 +30,31 @@ This is a web application for an internal transaction management system, built w
 ## Technologies Used
 
 - Languages
-    - PHP – Server-side programming language
+    - PHP - Server-side programming language
     - HTML - Page structure and markup
     - CSS - Styling and layout
     - JavaScript - Client-side interactivity
 
 - Frameworks
-    - Laravel – Web application framework
-    - Bootstrap – CSS framework
+    - Laravel - Web application framework
+    - Bootstrap - CSS framework
 
 - Database
-    - MySQL – Relational database 
+    - MySQL - Relational database 
 
 - Packages
-    - Laravel Eloquent ORM – Database interaction and ORM
-    - Filament – Admin dashboard and panel management
-    - Spatie Laravel Permission – Role and permission management
-    - DOMPDF / Laravel Snappy – PDF generation for reports
-    - Laravel Authentication (Fortify) – User authentication and authorization
+    - Laravel Eloquent ORM - Database interaction and ORM
+    - Filament - Admin dashboard and panel management
+    - Spatie Laravel Permission - Role and permission management
+    - DOMPDF / Laravel Snappy - PDF generation for reports
+    - Laravel Authentication (Fortify) - User authentication and authorization
 
 - Package manger
-    - Composer – Dependency and package manager for PHP
+    - Composer - Dependency and package manager for PHP
   
 - Tools
-    - XAMPP – Local development environment 
-    - Laravel Artisan – Command-line tool for Laravel
+    - XAMPP - Local development environment 
+    - Laravel Artisan - Command-line tool for Laravel
  
 ## Getting Started
 
@@ -105,6 +105,27 @@ This is a web application for an internal transaction management system, built w
    - Admin panel URL: http://localhost:8000/admin
 
 ## Project structure
+
+```bash
+laravel-web-project/
+├── app/
+│   ├── Http/             # Controllers, Requests (validation)
+│   ├── Models/           # Eloquent models representing database tables
+│   ├── Services/         # Business logic layer
+│   ├── Repositories/     # Data access layer 
+│   ├── Policies/         # Authorization rules
+│   ├── Exceptions/       # Custom exception handling
+│   └── Filament/         # Admin panel (Resources, Pages, Widgets)
+│
+├── resources/            # Frontend views (Blade), CSS, JS
+├── routes/               # Web and Filament routes
+├── database/             # Migrations, Seeders, Factories
+├── config/               # Application configuration
+├── storage/              # Logs, cache, uploads
+├── .env                  # Environment variables
+├── artisan               # CLI commands
+└── composer.json         # Dependencies
+```
 
 ## Deployment
 
