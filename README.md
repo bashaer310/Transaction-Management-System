@@ -107,7 +107,7 @@ This is a web application for an internal transaction management system, built w
 ## Project structure
 
 ```bash
-laravel-web-project/
+Transaction-Management-System/
 ├── app/
 │   ├── Http/             # Controllers, Requests (validation)
 │   ├── Models/           # Eloquent models representing database tables
