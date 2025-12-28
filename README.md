@@ -69,7 +69,7 @@ This is a web application for an internal transaction management system, built w
   ```
 
 3. Install dependencies:
-Make sure Composer is installed, then run:
+  Make sure Composer is installed, then run:
   ```bash
   composer install
   ```
