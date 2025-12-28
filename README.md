@@ -76,7 +76,7 @@ This is a web application for an internal transaction management system, built w
 4. Configure Environment
     - Copy the environment file:
        ```bash
-       composer install
+       cp .env.example .env
        ```
     - Open the .env file and update the database configuration:
        ```bash
