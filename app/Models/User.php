@@ -59,6 +59,21 @@ class User extends Authenticatable
         return $this->belongsTo(Department::class);
     }
 
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
+    }
+
+    public function attachments()
+    {
+        return $this->hasMany(Attachment::class);
+    }
+
     /* Helpers */
     public function isActive(): bool
     {

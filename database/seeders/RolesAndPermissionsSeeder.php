@@ -26,6 +26,18 @@ class RolesAndPermissionsSeeder extends Seeder
 
         /* Create Permissions */
         $permissions = [
+            // System / Panel 
+            'access-admin-panel',
+            'view-dashboard',
+            'assign-role',
+            'give-permission',
+
+            // Roles
+            'create-role',
+            'edit-role',
+            'delete-role',
+            'view-role',
+
             // Users
             'create-user',
             'edit-user',
@@ -61,6 +73,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'edit-attachment',
             'delete-attachment',
             'view-attachment',
+
+            // Report
+            'create-report'
         ];
 
         foreach ($permissions as $permission) {
@@ -83,6 +98,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'view-attachment',
             'view-department',
             'view-entity',
+            'create-report'
         ]);
 
         $employee->givePermissionTo([
