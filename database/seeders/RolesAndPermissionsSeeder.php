@@ -19,7 +19,7 @@ class RolesAndPermissionsSeeder extends Seeder
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
 
-        /* Create Rols */
+        /* Create Roles */
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         $manager = Role::firstOrCreate(['name' => 'Manager']);
         $employee = Role::firstOrCreate(['name' => 'Employee']);
@@ -37,6 +37,12 @@ class RolesAndPermissionsSeeder extends Seeder
             'edit-role',
             'delete-role',
             'view-role',
+
+            // Permission
+            'create-permission',
+            'edit-permission',
+            'delete-permission',
+            'view-permission',
 
             // Users
             'create-user',
