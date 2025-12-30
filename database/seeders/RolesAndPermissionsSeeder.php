@@ -104,7 +104,9 @@ class RolesAndPermissionsSeeder extends Seeder
             'view-attachment',
             'view-department',
             'view-entity',
-            'create-report'
+            'create-report',
+            'access-admin-panel',
+            'view-dashboard'
         ]);
 
         $employee->givePermissionTo([
