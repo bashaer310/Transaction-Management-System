@@ -58,7 +58,7 @@ class YPanelProvider extends PanelProvider
             ]);
     }
 
-    //does not work
+
     /*public static function canAccess(): bool
     {
         $user = Auth::user();
