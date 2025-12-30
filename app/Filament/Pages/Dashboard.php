@@ -11,7 +11,6 @@ class Dashboard extends Page
 
     protected string $view = 'filament.pages.dashboard';
 
-    //does not work
     /*public static function canView(): bool
     {
         $user = Auth::user();
