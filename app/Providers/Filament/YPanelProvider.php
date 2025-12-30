@@ -56,12 +56,7 @@ class YPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+            
     }
 
-
-    /*public static function canAccess(): bool
-    {
-        $user = Auth::user();
-        return $user && $user->can('view-dashboard');
-    }*/
 }
