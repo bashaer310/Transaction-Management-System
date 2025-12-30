@@ -1,6 +1,6 @@
 # Transaction Management System
 
-This is a web application for an internal transaction management system, built with Laravel and MySQL. The system enables organizations to efficiently manage transactions from multiple entities to internal departments, including recording and tracking incoming and outgoing transactions, handling approvals, and automating workflow processes. It includes core features like **user authentication**, **transaction management**, **department and entity management**, and **reporting**.
+This is a web application for an internal transaction management system, built with Laravel and MySQL. The system enables organizations to efficiently manage transactions from external entities to internal departments, including recording and tracking incoming and outgoing transactions, handling approvals, and automating workflow processes. It includes core features like **user authentication**, **transaction management**, **department and entity management**, and **reporting**.
 
 ## Features
 
