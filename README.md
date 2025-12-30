@@ -109,7 +109,7 @@ Ensure your database server (MySQL) is running and the database exists.
 
 8. Test the application
 - The application will be available at: http://localhost:8000
-- Admin panel URL: http://localhost:8000/admin
+- Admin panel URL: http://localhost:8000/dashboard
 
 ## Project structure
 
