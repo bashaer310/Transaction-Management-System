@@ -26,8 +26,8 @@ class YPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->id('admin_panel') //intenal panel
-            ->path('dashboard') //extenal panel
+            ->id('admin_panel') 
+            ->path('dashboard') 
             ->login()
             ->colors([
                 'primary' => Color::Amber,
