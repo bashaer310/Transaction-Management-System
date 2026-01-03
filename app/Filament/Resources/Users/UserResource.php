@@ -12,10 +12,12 @@ use App\Filament\Resources\Users\Tables\UsersTable;
 use App\Models\User;
 use App\Policies\UserPolicy;
 use BackedEnum;
+use Filament\Facades\Filament;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 
 class UserResource extends Resource
 {
@@ -51,6 +53,18 @@ class UserResource extends Resource
     protected static function getPolicy(): ?string
     {
         return UserPolicy::class;
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        $user = Filament::auth()->user();
+        $query = parent::getEloquentQuery();
+
+        if ($user?->hasRole('Admin')) {
+            return $query;
+        }
+
+        return $query->where('department_id', $user->department_id);
     }
 
     public static function getPages(): array
