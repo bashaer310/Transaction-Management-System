@@ -14,8 +14,10 @@ class CreateTransaction extends CreateRecord
     {
         $user = Filament::auth()->user();
 
+        if (!$user?->hasRole('Admin')) {
+            $data['department_id'] = $user->department_id;
+        }
         $data['created_by'] = $user->id;
-        $data['department_id'] = $user->department_id;
         return $data;
     }
 }

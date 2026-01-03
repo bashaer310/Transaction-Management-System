@@ -23,9 +23,10 @@ class EditTransaction extends EditRecord
     protected function mutateFormDataBeforeCreate(array $data): array
     {
         $user = Filament::auth()->user();
-
+        if (!$user?->hasRole('Admin')) {
+            $data['department_id'] = $user->department_id;
+        }
         $data['created_by'] = $user->id;
-        $data['department_id'] = $user->department_id;
         return $data;
     }
 }
