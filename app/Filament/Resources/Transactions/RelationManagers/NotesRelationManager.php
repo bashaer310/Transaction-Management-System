@@ -25,7 +25,7 @@ class NotesRelationManager extends RelationManager
 {
     protected static string $relationship = 'notes';
 
-    protected static ?string $title = 'notes';
+    protected static ?string $title = 'الملاحظات';
 
     public function form(Schema $schema): Schema
     {
@@ -103,16 +103,8 @@ class NotesRelationManager extends RelationManager
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make()->visible(
-                    fn($record) =>
-                    Filament::auth()->user()->id === $record->created_by
-                        || Filament::auth()->user()->hasRole('Admin')
-                ),
-
-                DeleteAction::make()->visible(
-                    fn($record) =>
-                    Filament::auth()->user()->hasRole('Admin')
-                ),
+                EditAction::make(),
+                DeleteAction::make(),
             ]);
     }
 }

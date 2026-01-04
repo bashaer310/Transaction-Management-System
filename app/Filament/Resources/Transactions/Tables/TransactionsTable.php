@@ -17,54 +17,50 @@ class TransactionsTable
     {
         return $table
             ->columns([
-            TextColumn::make('transaction_number')
-                ->label('رقم المعاملة')
-                ->searchable(),
+                TextColumn::make('transaction_number')
+                    ->label('رقم المعاملة')
+                    ->searchable(),
 
-            TextColumn::make('subject')
-                ->label('الموضوع')
-                ->searchable(),
+                TextColumn::make('subject')
+                    ->label('الموضوع')
+                    ->searchable(),
 
-            TextColumn::make('sourceEntity.name')
-                ->label('الجهة الصادرة')
-                ->searchable(),
+                TextColumn::make('sourceEntity.name')
+                    ->label('الجهة الصادرة')
+                    ->searchable(),
 
-            TextColumn::make('receivingDepartment.name')
-                ->label('القسم المستلم')
-                ->searchable(),
+                TextColumn::make('receivingDepartment.name')
+                    ->label('القسم المستلم')
+                    ->searchable(),
 
-            TextColumn::make('status')
-                ->label('الحالة')
-                ->badge()
-                ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('status')
+                    ->label('الحالة')
+                    ->badge()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
-            TextColumn::make('creator.name')
-                ->label('أنشئت بواسطة')
-                ->searchable()
-                ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('creator.name')
+                    ->label('أنشئت بواسطة')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
-            TextColumn::make('created_at')
-                ->label('تاريخ الإنشاء')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('created_at')
+                    ->label('تاريخ الإنشاء')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
 
-            TextColumn::make('updated_at')
-                ->label('آخر تحديث')
-                ->dateTime()
-                ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('updated_at')
+                    ->label('آخر تحديث')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make()->visible(
-                    fn($record) =>
-                    Filament::auth()->user()->id === $record->created_by
-                        || Filament::auth()->user()->hasRole('Admin')
-                ),
+                EditAction::make(),
                 DeleteAction::make(),
             ]);
     }

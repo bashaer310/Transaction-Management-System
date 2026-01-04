@@ -33,7 +33,7 @@ class TransactionForm
                 ->required()
                 ->disabled(
                     fn() =>
-                    ! Filament::auth()->user()?->hasRole('admin')
+                    !Filament::auth()->user()?->hasRole('Admin')
                 )
                 ->default(
                     fn() =>

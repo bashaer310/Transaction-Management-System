@@ -28,21 +28,8 @@ class RolesAndPermissionsSeeder extends Seeder
         $permissions = [
             // System / Panel 
             'access-admin-panel',
-            'view-dashboard',
             'assign-role',
-            'give-permission',
-
-            // Roles
-            'create-role',
-            'edit-role',
-            'delete-role',
             'view-role',
-
-            // Permission
-            'create-permission',
-            'edit-permission',
-            'delete-permission',
-            'view-permission',
 
             // Users
             'create-user',
@@ -106,7 +93,6 @@ class RolesAndPermissionsSeeder extends Seeder
             'view-entity',
             'create-report',
             'access-admin-panel',
-            'view-dashboard'
         ]);
 
         $employee->givePermissionTo([
