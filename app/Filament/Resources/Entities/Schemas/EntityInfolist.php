@@ -11,14 +11,22 @@ class EntityInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('contact_info'),
+                TextEntry::make('name')
+                    ->label('الاسم'),
+
+                TextEntry::make('contact_info')
+                    ->label('معلومات التواصل'),
+
                 TextEntry::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->placeholder('-'),
+
                 TextEntry::make('updated_at')
+                    ->label('آخر تحديث')
                     ->dateTime()
                     ->placeholder('-'),
+
             ]);
     }
 }

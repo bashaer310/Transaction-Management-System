@@ -14,29 +14,39 @@ class TransactionForm
     {
         return $schema
             ->components([
-                TextInput::make('transaction_number')
-                    ->required(),
-                TextInput::make('subject')
-                    ->required(),
-                Select::make('source_entity_id')
-                    ->relationship('sourceEntity', 'name')
-                    ->required(),
-                Select::make('receiving_department_id')
-                    ->relationship('receivingDepartment', 'name')
-                    ->required()
-                    ->disabled(
-                        fn() =>
-                        !Filament::auth()->user()?->hasRole('admin')
-                    )
-                    ->default(
-                        fn() =>
-                        Filament::auth()->user()?->department_id
-                    )
-                    ->dehydrated(true),
-                Select::make('status')
-                    ->options(TransactionStatus::class)
-                    ->default('pending')
-                    ->required(),
-            ]);
+            TextInput::make('transaction_number')
+                ->label('رقم المعاملة')
+                ->required(),
+
+            TextInput::make('subject')
+                ->label('الموضوع')
+                ->required(),
+
+            Select::make('source_entity_id')
+                ->label('الجهة الصادرة')
+                ->relationship('sourceEntity', 'name')
+                ->required(),
+
+            Select::make('receiving_department_id')
+                ->label('القسم المستلم')
+                ->relationship('receivingDepartment', 'name')
+                ->required()
+                ->disabled(
+                    fn() =>
+                    ! Filament::auth()->user()?->hasRole('admin')
+                )
+                ->default(
+                    fn() =>
+                    Filament::auth()->user()?->department_id
+                )
+                ->dehydrated(true),
+
+            Select::make('status')
+                ->label('حالة المعاملة')
+                ->options(TransactionStatus::class)
+                ->default('pending')
+                ->required(),
+
+        ]);
     }
 }

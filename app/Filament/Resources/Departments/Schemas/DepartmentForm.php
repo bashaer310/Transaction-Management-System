@@ -12,6 +12,7 @@ class DepartmentForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('الاسم')
                     ->required(),
             ]);
     }

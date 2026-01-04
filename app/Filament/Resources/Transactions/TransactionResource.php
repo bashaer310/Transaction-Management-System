@@ -26,7 +26,7 @@ class TransactionResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'transaction';
+    protected static ?string $title = 'المعاملات';
 
     public static function form(Schema $schema): Schema
     {

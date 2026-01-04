@@ -23,7 +23,7 @@ class EntityResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'entity';
+    protected static ?string $title = 'الجهه الصادرة';
 
     public static function form(Schema $schema): Schema
     {

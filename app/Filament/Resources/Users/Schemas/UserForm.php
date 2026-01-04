@@ -16,25 +16,31 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('الاسم')
                     ->required(),
                 TextInput::make('email')
-                    ->label('Email address')
+                    ->label('البريد الإلكتروني')
                     ->email()
                     ->required(),
-                DateTimePicker::make('email_verified_at'),
+                DateTimePicker::make('email_verified_at')
+                    ->label('التحقق من البريد الإلكتروني'),
                 TextInput::make('password')
+                    ->label('كلمة المرور')
                     ->password()
                     ->required(),
                 Select::make('department_id')
+                    ->label('القسم')
                     ->relationship('department', 'name')
                     ->searchable()
                     ->preload()
                     ->required(),
                 Select::make('status')
+                    ->label('الحالة')
                     ->options(UserStatus::class)
                     ->default('active')
                     ->required(),
                 Select::make('roles')
+                    ->label('الدور')
                     ->relationship('roles', 'name')
                     ->searchable()
                     ->preload()

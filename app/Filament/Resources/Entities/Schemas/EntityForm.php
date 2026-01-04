@@ -11,10 +11,14 @@ class EntityForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->required(),
-                TextInput::make('contact_info')
-                    ->required(),
-            ]);
+            TextInput::make('name')
+                ->label('الاسم')
+                ->required(),
+
+            TextInput::make('contact_info')
+                ->label('معلومات التواصل')
+                ->required(),
+
+        ]);
     }
 }

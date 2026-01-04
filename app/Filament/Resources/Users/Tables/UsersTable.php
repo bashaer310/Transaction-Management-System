@@ -17,23 +17,32 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('الاسم')
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label('Email address')
+                    ->label('البريد الإلكتروني')
                     ->searchable(),
                 TextColumn::make('email_verified_at')
+                    ->label('التحقق من البريد الإلكتروني')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('department.name')->searchable(),
+                TextColumn::make('department.name')
+                    ->label('القسم')
+                    ->searchable(),
                 TextColumn::make('status')
+                    ->label('الحالة')
                     ->badge(),
-                TextColumn::make('roles.name')->searchable(),
+                TextColumn::make('roles.name')
+                    ->label('الدور')
+                    ->searchable(),
                 TextColumn::make('created_at')
+                    ->label('تاريخ الانشاء')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label('آخر التحديث')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -46,11 +55,6 @@ class UsersTable
                 EditAction::make(),
                 DeleteAction::make(),
 
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ]);
     }
 }

@@ -25,7 +25,7 @@ class DepartmentResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $recordTitleAttribute = 'department';
+    protected static ?string $title = 'الأقسام';
 
     public static function form(Schema $schema): Schema
     {

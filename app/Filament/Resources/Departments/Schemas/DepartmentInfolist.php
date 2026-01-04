@@ -11,11 +11,16 @@ class DepartmentInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
+                TextEntry::make('name')
+                    ->label('الاسم'),
+
                 TextEntry::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->placeholder('-'),
+
                 TextEntry::make('updated_at')
+                    ->label('آخر تحديث')
                     ->dateTime()
                     ->placeholder('-'),
             ]);

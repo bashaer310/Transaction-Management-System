@@ -31,12 +31,15 @@ class NotesRelationManager extends RelationManager
     {
         return $schema->components([
             Textarea::make('note')
+                ->label('الملاحظة')
                 ->required(),
 
             Select::make('type')
+                ->label('نوع الملاحظة')
                 ->options(TransactionType::class)
                 ->default('outgoing')
                 ->required(),
+
 
             Hidden::make('created_by')
                 ->default(fn() => Filament::auth()->id()),
@@ -48,21 +51,25 @@ class NotesRelationManager extends RelationManager
     {
         return $schema
             ->components([
-                TextEntry::make('note'),
+                TextEntry::make('note')
+                    ->label('الملاحظة'),
 
                 TextEntry::make('type')
+                    ->label('نوع الملاحظة')
                     ->badge(),
 
-                TextEntry::make('creator.name'),
+                TextEntry::make('creator.name')
+                    ->label('أنشئت بواسطة'),
 
                 TextEntry::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->placeholder('-'),
 
                 TextEntry::make('updated_at')
+                    ->label('آخر تحديث')
                     ->dateTime()
                     ->placeholder('-'),
-
             ]);
     }
 
@@ -71,17 +78,22 @@ class NotesRelationManager extends RelationManager
         return $table
             ->columns([
                 TextColumn::make('note')
-                    ->limit(50),
+                    ->label('الملاحظة')
+                    ->limit(50)
+                    ->tooltip(fn($record) => $record->note),
 
                 TextColumn::make('type')
+                    ->label('نوع الملاحظة')
                     ->badge(),
 
                 TextColumn::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
+                    ->label('آخر تحديث')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -97,11 +109,10 @@ class NotesRelationManager extends RelationManager
                         || Filament::auth()->user()->hasRole('Admin')
                 ),
 
-                DeleteAction::make(),
-            ])->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
-            ]);;
+                DeleteAction::make()->visible(
+                    fn($record) =>
+                    Filament::auth()->user()->hasRole('Admin')
+                ),
+            ]);
     }
 }

@@ -11,17 +11,32 @@ class TransactionInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('transaction_number'),
-                TextEntry::make('subject'),
-                TextEntry::make('sourceEntity.name'),
-                TextEntry::make('receivingDepartment.name'),
+                TextEntry::make('transaction_number')
+                    ->label('رقم المعاملة'),
+
+                TextEntry::make('subject')
+                    ->label('الموضوع'),
+
+                TextEntry::make('sourceEntity.name')
+                    ->label('الجهة الصادرة'),
+
+                TextEntry::make('receivingDepartment.name')
+                    ->label('القسم المستلم'),
+
                 TextEntry::make('status')
+                    ->label('الحالة')
                     ->badge(),
-                TextEntry::make('creator.name'),
+
+                TextEntry::make('creator.name')
+                    ->label('أنشئت بواسطة'),
+
                 TextEntry::make('created_at')
+                    ->label('تاريخ الإنشاء')
                     ->dateTime()
                     ->placeholder('-'),
+
                 TextEntry::make('updated_at')
+                    ->label('آخر تحديث')
                     ->dateTime()
                     ->placeholder('-'),
             ]);

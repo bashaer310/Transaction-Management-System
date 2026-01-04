@@ -17,23 +17,43 @@ class TransactionsTable
     {
         return $table
             ->columns([
-                TextColumn::make('transaction_number')
-                    ->searchable(),
-                TextColumn::make('subject')
-                    ->searchable(),
-                TextColumn::make('sourceEntity.name')->searchable(),
-                TextColumn::make('receivingDepartment.name')->searchable(),
-                TextColumn::make('status')->toggleable(isToggledHiddenByDefault: true)
-                    ->badge(),
-                TextColumn::make('creator.name')->searchable()->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+            TextColumn::make('transaction_number')
+                ->label('رقم المعاملة')
+                ->searchable(),
+
+            TextColumn::make('subject')
+                ->label('الموضوع')
+                ->searchable(),
+
+            TextColumn::make('sourceEntity.name')
+                ->label('الجهة الصادرة')
+                ->searchable(),
+
+            TextColumn::make('receivingDepartment.name')
+                ->label('القسم المستلم')
+                ->searchable(),
+
+            TextColumn::make('status')
+                ->label('الحالة')
+                ->badge()
+                ->toggleable(isToggledHiddenByDefault: true),
+
+            TextColumn::make('creator.name')
+                ->label('أنشئت بواسطة')
+                ->searchable()
+                ->toggleable(isToggledHiddenByDefault: true),
+
+            TextColumn::make('created_at')
+                ->label('تاريخ الإنشاء')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
+
+            TextColumn::make('updated_at')
+                ->label('آخر تحديث')
+                ->dateTime()
+                ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
@@ -46,11 +66,6 @@ class TransactionsTable
                         || Filament::auth()->user()->hasRole('Admin')
                 ),
                 DeleteAction::make(),
-            ])
-            ->toolbarActions([
-                BulkActionGroup::make([
-                    DeleteBulkAction::make(),
-                ]),
             ]);
     }
 }
