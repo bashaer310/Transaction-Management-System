@@ -6,6 +6,7 @@ use App\Filament\Resources\Transactions\Pages\CreateTransaction;
 use App\Filament\Resources\Transactions\Pages\EditTransaction;
 use App\Filament\Resources\Transactions\Pages\ListTransactions;
 use App\Filament\Resources\Transactions\Pages\ViewTransaction;
+use App\Filament\Resources\Transactions\RelationManagers\AttachmentsRelationManager;
 use App\Filament\Resources\Transactions\RelationManagers\NotesRelationManager;
 use App\Filament\Resources\Transactions\Schemas\TransactionForm;
 use App\Filament\Resources\Transactions\Schemas\TransactionInfolist;
@@ -26,7 +27,8 @@ class TransactionResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $title = 'المعاملات';
+    protected static ?string $navigationLabel = 'المعاملات';
+
 
     public static function form(Schema $schema): Schema
     {
@@ -47,6 +49,7 @@ class TransactionResource extends Resource
     {
         return [
             NotesRelationManager::class,
+            AttachmentsRelationManager::class,
         ];
     }
 

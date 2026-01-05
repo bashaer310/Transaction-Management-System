@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Transactions\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -59,9 +60,9 @@ class TransactionsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
-                DeleteAction::make(),
+                ViewAction::make()->label('عرض'),
+                EditAction::make()->label('تعديل'),
+                DeleteAction::make()->label('حذف'),
             ]);
     }
 }

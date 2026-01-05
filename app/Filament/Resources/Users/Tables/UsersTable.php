@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\CreateAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -52,13 +53,13 @@ class UsersTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make()->visible(
+                ViewAction::make()->label('عرض'),
+                EditAction::make()->label('تعديل')->visible(
                     fn($record) =>
-                    Filament::auth()->id() === $record->created_by
-                        || Filament::auth()->user()?->hasRole('admin')
+                    Filament::auth()->id() === $record->id
+                        || Filament::auth()->user()?->hasRole('Admin')
                 ),
-                DeleteAction::make(),
-            ]);
+                DeleteAction::make()->label('حذف'),
+            ]);;
     }
 }
