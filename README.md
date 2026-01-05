@@ -5,12 +5,12 @@ This is a web application for an internal transaction management system, built w
 ## Features
 
 - **User Management**:
-  - **User Registration** - admin can create user accounts (manger/employee)
+  - **User Registration** - admin can create user accounts (manager/employee)
   - **Authentication & Authorization** - users can login with role-based access
   - **Profile Management** - users can view and update their profile
  
 - **Transaction Management**:
-  - **Transaction Management** - admin  or manger can create transactions, link them to entities, forward them to departments, and update or delete them
+  - **Transaction Management** - admin  or manager can create transactions, link them to entities, forward them to departments, and update or delete them
   - **Transaction Browsing** - users can retrieve transactions forwarded to their department with pagination and filtering
   - **Transaction Details** - users can view transaction details
   - **Note and attachment creation** - users can write notes and upload attachments to transactions forwarded to their departments
@@ -49,7 +49,7 @@ This is a web application for an internal transaction management system, built w
     - DOMPDF / Laravel Snappy - PDF generation for reports
     - Laravel Authentication (Fortify) - User authentication and authorization
 
-- Package manger
+- Package manager
     - Composer - Dependency and package manager for PHP
   
 - Tools

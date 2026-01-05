@@ -7,6 +7,7 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ViewAction;
+use Filament\Facades\Filament;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -52,7 +53,11 @@ class UsersTable
             ])
             ->recordActions([
                 ViewAction::make(),
-                EditAction::make(),
+                EditAction::make()->visible(
+                    fn($record) =>
+                    Filament::auth()->id() === $record->created_by
+                        || Filament::auth()->user()?->hasRole('admin')
+                ),
                 DeleteAction::make(),
             ]);
     }

@@ -79,6 +79,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $admin->givePermissionTo(Permission::all());
 
         $manager->givePermissionTo([
+            'edit-user',
             'view-user',
             'create-transaction',
             'edit-transaction',
@@ -96,6 +97,7 @@ class RolesAndPermissionsSeeder extends Seeder
         ]);
 
         $employee->givePermissionTo([
+            'edit-user',
             'view-transaction',
             'create-note',
             'view-note',
